@@ -1,6 +1,7 @@
 package com.lyk.coursearrange.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -58,9 +59,7 @@ public class ClassInfoController {
      */
     @GetMapping("/class-grade/{grade}")
     public ServerResponse queryClass(@PathVariable("grade") String grade) {
-        QueryWrapper<ClassInfo> wrapper = new QueryWrapper<ClassInfo>().eq("remark", grade);
-        List<ClassInfo> classInfoList = classInfoService.list(wrapper);
-
+        List<ClassInfo> classInfoList = classInfoService.getClassInfoList(grade);
         return ServerResponse.ofSuccess(classInfoList);
     }
 

@@ -2,8 +2,10 @@ package com.lyk.coursearrange.dao;
 
 import com.lyk.coursearrange.entity.Teacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -13,6 +15,8 @@ import org.apache.ibatis.annotations.Select;
  * @author lequal
  * @since 2020-03-13
  */
+@Mapper
+@Repository
 public interface TeacherDao extends BaseMapper<Teacher> {
 
     @Select("SELECT * FROM tb_teacher WHERE teacher_no=#{account} AND password=#{password}" +

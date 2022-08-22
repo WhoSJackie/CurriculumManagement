@@ -28,9 +28,9 @@
             <tr>
               <th>时间</th>
               <th
-                v-for="(weekNum, weekIndex) in classTableData.courses.length"
-                :key="weekIndex"
-              >{{'周' + digital2Chinese(weekIndex + 1, 'week')}}</th>
+                v-for="(weekNum, weekIndex) in classTableData.courses.length" :key="weekIndex">
+                {{'周' + digital2Chinese(weekIndex + 1, 'week')}}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -41,9 +41,9 @@
               </td>
 
               <td
-                v-for="(course, courseIndex) in classTableData.courses"
-                :key="courseIndex"
-              >{{classTableData.courses[courseIndex][lessonIndex] || '-'}}</td>
+                v-for="(course, courseIndex) in classTableData.courses" :key="courseIndex">
+                {{classTableData.courses[courseIndex][lessonIndex] || '-'}}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -87,12 +87,11 @@ export default {
       value3: "",
       classTableData: {
         lessons: [
-          "07.20-8.55",
-          "9.10-10.45",
-          "11.00-12.35",
-          "14.20-15.55",
-          "16.10-17.45"
-
+          "8:00-10:00",
+          "10:00-12:00",
+          "13.00-15.00",
+          "15:30-17:30",
+          "18:30-20:30"
         ],
         // 每一行对应周几的一列
         // 第1节：7.20-8.55
@@ -138,7 +137,7 @@ export default {
         .then(res => {
           //alert(this.value2)
           let r = res.data.data;
-          this.classNo.splice(0,this.classNo.length); 
+          this.classNo.splice(0,this.classNo.length);
           this.value3 = ''
           r.map(v=>{
             this.classNo.push({
@@ -172,7 +171,6 @@ export default {
               index = index - 1;
             }
             else{
-              
               this.classTableData.courses[level].push(item.teacher.realname + "-" + item.courseInfo.courseName + "(" + item.classroomNo + ")");
             }
             if((times % 5) == 0){
@@ -206,7 +204,7 @@ export default {
         : character[num];
     },
 
-    
+
   }
 };
 </script>

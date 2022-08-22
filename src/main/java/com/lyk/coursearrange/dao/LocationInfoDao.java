@@ -3,7 +3,9 @@ package com.lyk.coursearrange.dao;
 import com.lyk.coursearrange.entity.LocationInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lyk.coursearrange.entity.response.LocationVO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -15,6 +17,8 @@ import java.util.List;
  * @author lequal
  * @since 2020-03-20
  */
+@Mapper
+@Repository
 public interface LocationInfoDao extends BaseMapper<LocationInfo> {
 
 //    @Select("select ttbi.teach_build_no, ttbi.teach_build_name, tgi.grade_no,tgi.grade_name from tb_teach_build_info ttbi join tb_location_info tli on tli.teachbuild_no = ttbi.teach_build_no join tb_grade_info tgi on tli.grade_no = tgi.grade_no limit ${page}, ${limit}")

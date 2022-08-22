@@ -2,8 +2,10 @@ package com.lyk.coursearrange.dao;
 
 import com.lyk.coursearrange.entity.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -13,6 +15,8 @@ import org.apache.ibatis.annotations.Select;
  * @author lequal
  * @since 2020-03-06
  */
+@Mapper
+@Repository
 public interface AdminDao extends BaseMapper<Admin> {
 
     @Select("SELECT * FROM tb_admin WHERE admin_no=#{account} AND password=#{password}" +

@@ -2,8 +2,10 @@ package com.lyk.coursearrange.dao;
 
 import com.lyk.coursearrange.entity.Classroom;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +13,8 @@ import java.util.List;
  * @author lequal
  * @since 2020-03-23
  */
+@Mapper
+@Repository
 public interface ClassroomDao extends BaseMapper<Classroom> {
 
 //    查询某个教学楼下的教室列表

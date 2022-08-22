@@ -3,8 +3,10 @@ package com.lyk.coursearrange.dao;
 import com.lyk.coursearrange.entity.ClassInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lyk.coursearrange.entity.response.ClassInfoVO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ import java.util.List;
  * @author lequal
  * @since 2020-03-06
  */
+@Mapper
+@Repository
 public interface ClassInfoDao extends BaseMapper<ClassInfo> {
 
     // 获得班级的人数

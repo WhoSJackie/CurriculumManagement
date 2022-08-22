@@ -3,13 +3,17 @@ package com.lyk.coursearrange.dao;
 import com.lyk.coursearrange.entity.CoursePlan;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author lequal
  * @since 2020-04-15
  */
+@Mapper
+@Repository
 public interface CoursePlanDao extends BaseMapper<CoursePlan> {
 
     // 将上课计划插入上课计划的表中
